@@ -70,6 +70,11 @@
                     <!-- Opcje odpowiedzi -->
                 </div>
 
+                <!-- Pojemnik na uzasadnienie (domyślnie ukryty) -->
+                <div id="explanation-container" class="hidden mt-6 p-5 bg-indigo-50 border border-indigo-100 rounded-xl shadow-sm animate-fade-in">
+                    <!-- Treść uzasadnienia -->
+                </div>
+
                 <div class="mt-8 flex justify-end">
                     <button id="next-btn" onclick="nextQuestion()" class="hidden bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-8 rounded-xl shadow-md transition duration-300">
                         Następne pytanie <i class="fas fa-arrow-right ml-2"></i>
@@ -104,102 +109,122 @@
             {
                 question: "W którym roku podczas konferencji w Dartmouth narodziło się pojęcie sztucznej inteligencji?",
                 options: ["1945", "1956", "1968", "1980"],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Konferencja w Dartmouth w 1956 roku jest uznawana za oficjalną datę narodzin pojęcia sztucznej inteligencji."
             },
             {
                 question: "Która dziedzina zajmuje się interpretacją komunikacji pomiędzy komputerem a człowiekiem?",
                 options: ["ML (Machine Learning)", "DL (Deep Learning)", "NLP (Natural Language Processing)", "RAG (Retrieval Augmented Generation)"],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. NLP (Natural Language Processing) to dziedzina skupiona na interpretacji i analizie sposobu, w jaki ludzie mówią i piszą."
             },
             {
                 question: "Czym charakteryzuje się Deep Learning (Uczenie głębokie)?",
                 options: ["Wykorzystuje proste reguły matematyczne.", "Opiera się na sieciach neuronowych o wielu warstwach.", "Służy wyłącznie do analizy tekstu.", "Nie wymaga dużej mocy obliczeniowej."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Deep Learning wyróżnia się wykorzystaniem sieci neuronowych o wielu warstwach (deep neural networks) do modelowania danych."
             },
             {
                 question: "Które procesory sprawdzają się znacznie lepiej w przetwarzaniu modeli LLM?",
                 options: ["Procesory CPU", "Procesory graficzne GPU", "Procesory dźwiękowe", "Klasyczne procesory biurowe"],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Procesory graficzne GPU wykazują znacznie wyższą wydajność w przetwarzaniu modeli LLM niż klasyczne jednostki CPU."
             },
             {
                 question: "Według raportu IPSOS, do czego najczęściej wykorzystywane są modele językowe AI (49%)?",
                 options: ["Do rozrywki", "Do burzy mózgów", "Do wyszukiwania informacji", "Do pisania e-maili"],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. Według raportu IPSOS najczęstszym sposobem wykorzystania AI, wskazanym przez 49% badanych, jest wyszukiwanie informacji."
             },
             {
                 question: "Który model LLM jest zintegrowany z Gmail, Kalendarzem i innymi usługami Google?",
                 options: ["Copilot", "ChatGPT", "Claude", "Gemini"],
-                correct: 3
+                correct: 3,
+                explanation: "Poprawna odpowiedź: D. Gemini to model firmy Google, który jest natywnie zintegrowany z jej usługami, takimi jak Gmail czy Kalendarz."
             },
             {
                 question: "Czym jest Prompt Engineering?",
                 options: ["Technika programowania modeli od zera.", "Technika tworzenia i formułowania tekstowych instrukcji dla modeli językowych.", "Metoda naprawy uszkodzonych baz danych.", "Rodzaj ataku hakerskiego."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Prompt Engineering definiuje się jako technikę tworzenia i formułowania instrukcji tekstowych dla modeli językowych."
             },
             {
                 question: "W przybliżeniu ile słów w prompcie odpowiada jednemu tokenowi?",
                 options: ["10 słów", "Całe zdanie", "Mniej więcej jedno słowo", "Pół strony tekstu"],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. W praktyce promptingu przyjmuje się uproszczenie, że jeden token odpowiada mniej więcej jednemu słowu."
             },
             {
                 question: "Jak nazywa się technika promptowania, w której model otrzymuje tylko polecenie bez żadnego przykładu?",
                 options: ["One-Shot Prompting", "Few-Shot Prompting", "Zero-Shot Prompting", "Negative Prompting"],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. Zero-Shot Prompting polega na podaniu samego polecenia bez żadnych dodatkowych przykładów poprawnej odpowiedzi."
             },
             {
                 question: "Która technika promptowania polega na zachęceniu modelu do \"myślenia krok po kroku\"?",
                 options: ["Role Prompting", "Chain-of-Thought (CoT)", "Contextual Prompting", "Structured Prompting"],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Technika Chain-of-Thought (Łańcuch myśli) poprawia logikę modelu poprzez zmuszenie go do myślenia etapami."
             },
             {
                 question: "Do czego służy technika Negative Prompting?",
                 options: ["Do krytykowania odpowiedzi modelu.", "Do jasnego określenia, czego model NIE powinien robić.", "Do generowania negatywnych opinii.", "Do obniżania wydajności modelu."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Negative Prompting służy do jasnego określenia zachowań lub treści, których model ma unikać."
             },
             {
                 question: "Jaka jest główna różnica między Microsoft Copilot 365 a Copilot Chat?",
                 options: ["Copilot 365 jest darmowy dla wszystkich.", "Copilot Chat ma dostęp do danych firmowych użytkownika.", "Copilot 365 jest wbudowany w aplikacje Office i ma dostęp do danych firmowych.", "Nie ma między nimi żadnej różnicy."],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. Copilot 365 wyróżnia się integracją z aplikacjami Office i bezpiecznym dostępem do danych wewnątrz organizacji."
             },
             {
                 question: "Czym charakteryzuje się Agent AI w porównaniu do Asystenta AI?",
                 options: ["Wymaga stałego nadzoru człowieka przy każdym kroku.", "Wykonuje zadania tylko na bezpośrednie żądanie.", "Może działać samodzielnie, autonomicznie i reagować na zmiany.", "Nie potrafi korzystać z zewnętrznych narzędzi."],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. Agenty AI różnią się od asystentów zdolnością do samodzielnego, autonomicznego działania i reagowania na zmiany."
             },
             {
                 question: "Co to są halucynacje modelu LLM?",
                 options: ["Błędy techniczne uniemożliwiające uruchomienie modelu.", "Generowanie fałszywych informacji, które brzmią prawdopodobnie.", "Specjalna technika generowania obrazów surrealistycznych.", "Przerwy w dostawie prądu do serwerowni AI."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Halucynacje to statystyczne przewidywanie tokenów, które skutkuje generowaniem zmyślonych faktów brzmiących bardzo wiarygodnie."
             },
             {
                 question: "Jaki procent danych wklejanych przez pracowników do ChatGPT jest poufny według przytoczonych statystyk?",
                 options: ["1%", "5%", "11%", "25%"],
-                correct: 2
+                correct: 2,
+                explanation: "Poprawna odpowiedź: C. Dane statystyczne pokazują, że aż 11% informacji wklejanych przez pracowników do ChatGPT ma charakter poufny."
             },
             {
                 question: "Czym jest Jailbreaking w kontekście LLM?",
                 options: ["Procesem aktualizacji modelu.", "Próbą obejścia ograniczeń i zabezpieczeń modelu, by zmusić go do generowania treści zabronionych.", "Rodzajem legalnej certyfikacji AI.", "Metodą przyspieszania generowania odpowiedzi."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Jailbreaking to celowa próba obejścia filtrów bezpieczeństwa modelu, aby zmusić go do generowania zabronionych treści."
             },
             {
                 question: "Według polityki UBB, do której grupy należą narzędzia AI przetwarzające informacje wymagające ochrony (np. Copilot EDU)?",
                 options: ["Grupa 1", "Grupa 2", "Grupa 3", "Grupa 4"],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Narzędzia autoryzowane z subskrypcją, takie jak Copilot EDU, należą do Grupy 2 dopuszczonej do danych chronionych."
             },
             {
                 question: "Które działanie stanowi krytyczny zakaz w pracy z narzędziami publicznie dostępnymi (Grupa 1) wg polityki UBB?",
                 options: ["Wyszukiwanie ogólnych informacji.", "Przetwarzanie informacji wymagających szczególnej ochrony.", "Korzystanie z modelu w celach edukacyjnych.", "Pisanie życzeń urodzinowych."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Polityka bezpieczeństwa UBB nakłada krytyczny zakaz przetwarzania informacji szczególnie chronionych w ogólnodostępnych narzędziach Grupy 1."
             },
             {
                 question: "Co oznacza pojęcie RAG (Retrieval Augmented Generation)?",
                 options: ["Trenowanie modelu od nowa na każdym zapytaniu.", "Podejście, w którym AI najpierw wyszukuje aktualne informacje z zewnętrznych źródeł, a potem generuje odpowiedź.", "Generowanie losowych słów w celu zmylenia hakerów.", "Skrót od nazwy najszybszego superkomputera na świecie."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. RAG (Retrieval Augmented Generation) to metoda, w której model najpierw pobiera fakty z zewnątrz, a potem generuje na ich podstawie odpowiedź."
             },
             {
                 question: "Jaka jest ogólna zasada skutecznego promptowania przedstawiona w \"Cheat Sheet\"?",
                 options: ["Im krótszy prompt, tym lepiej.", "Im bardziej autonomiczne zadanie, tym bardziej strukturalny powinien być prompt.", "Należy zawsze używać tylko jednego słowa.", "Prompt nie powinien zawierać żadnych ograniczeń."],
-                correct: 1
+                correct: 1,
+                explanation: "Poprawna odpowiedź: B. Zasada ogólna głosi, że im bardziej autonomiczne zadanie powierzamy AI, tym bardziej strukturalny powinien być nasz prompt."
             }
         ];
 
@@ -219,6 +244,7 @@
         const nextBtn = document.getElementById('next-btn');
         const questionCounter = document.getElementById('question-counter');
         const scoreDisplay = document.getElementById('score-display');
+        const explanationContainer = document.getElementById('explanation-container');
 
         function startQuiz() {
             startScreen.classList.add('hidden');
@@ -233,6 +259,7 @@
         function loadQuestion() {
             hasAnswered = false;
             nextBtn.classList.add('hidden');
+            explanationContainer.classList.add('hidden');
             
             const currentQuestion = quizData[currentQuestionIndex];
             questionText.textContent = currentQuestion.question;
@@ -281,6 +308,13 @@
                 buttons[currentQuestion.correct].classList.add('correct');
                 buttons[currentQuestion.correct].classList.remove('border-gray-200');
             }
+
+            // Pokaż uzasadnienie
+            explanationContainer.innerHTML = `
+                <h3 class="font-bold mb-2 text-indigo-800"><i class="fas fa-info-circle mr-2"></i>Wyjaśnienie</h3>
+                <p class="text-indigo-900 leading-relaxed">${currentQuestion.explanation}</p>
+            `;
+            explanationContainer.classList.remove('hidden');
 
             scoreDisplay.textContent = `Wynik: ${score}`;
             
